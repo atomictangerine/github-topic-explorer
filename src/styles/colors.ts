@@ -1,11 +1,11 @@
 interface Colors {
-  white: string,
-  grey1: string,
-  grey2: string,
-  grey3: string,
-  grey4: string,
-  grey5: string,
-  grey6: string,
+  white: string;
+  grey1: string;
+  grey2: string;
+  grey3: string;
+  grey4: string;
+  grey5: string;
+  grey6: string;
 }
 
 export const colors: Colors = {
@@ -15,5 +15,5 @@ export const colors: Colors = {
   grey3: '#888888',
   grey4: '#333333',
   grey5: '#4D4D4D',
-  grey6: '#262626'
-}
+  grey6: '#262626',
+};

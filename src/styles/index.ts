@@ -1,5 +1,4 @@
-import {colors} from './colors';
-import {grid} from './grid';
+import { colors } from './colors';
+import { grid } from './grid';
 
-export {colors, grid};
-
+export { colors, grid };

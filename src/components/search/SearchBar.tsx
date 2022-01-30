@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {colors, grid} from '../../styles';
+import { colors, grid } from '../../styles';
 import searchIcon from './search_icon.png';
 
 const SearchContainer = styled.div`
@@ -21,10 +21,10 @@ const SearchIcon = styled.img`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 SearchIcon.defaultProps = {
   src: searchIcon,
-  alt: 'search icon'
+  alt: 'search icon',
 };
 
 const SearchTextField = styled.input`
@@ -35,34 +35,41 @@ const SearchTextField = styled.input`
   padding-left: ${grid.l};
 `;
 
-
-const SearchBar : React.FC<{updateTopic: Function}> = (props) => {
-  const {updateTopic} = props;
+const SearchBar: React.FC<{ updateTopic: Function }> = ({ updateTopic }) => {
   const [value, setValue] = useState('');
 
   const onKeyDown = (e: any) => {
-    if(value && e.key === 'Enter' || e.keyCode === 13) {
+    if ((value && e.key === 'Enter') || e.keyCode === 13) {
       updateTopic(value);
     }
-  }
+  };
 
   const onChange = (e: any) => {
     const val = e?.target?.value.trim();
-    setValue(val)
+    setValue(val);
     updateTopic(val);
-  }
+  };
 
   const onClick = () => {
     updateTopic(value);
-  }
+  };
 
-  
   return (
     <SearchContainer>
-      <SearchTextField type='text' value={value} onKeyDown={(e) => onKeyDown(e)} onChange={(e) => onChange(e)} />
-      <SearchIcon onClick={() => {onClick()}} />
+      <SearchTextField
+        type='text'
+        placeholder='Search topics'
+        value={value}
+        onKeyDown={(e) => onKeyDown(e)}
+        onChange={(e) => onChange(e)}
+      />
+      <SearchIcon
+        onClick={() => {
+          onClick();
+        }}
+      />
     </SearchContainer>
-  )
-}
+  );
+};
 
 export default SearchBar;

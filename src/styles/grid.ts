@@ -1,10 +1,10 @@
 interface Grid {
-  xs: string,
-  s: string,
-  m: string,
-  l: string,
-  xl: string,
-  xxl: string,
+  xs: string;
+  s: string;
+  m: string;
+  l: string;
+  xl: string;
+  xxl: string;
 }
 
 // following 4dp baseline grid
@@ -15,4 +15,4 @@ export const grid: Grid = {
   l: '24px',
   xl: '48px',
   xxl: '64px',
-}
+};
