@@ -1,3 +1,6 @@
+[See the app in action](https://github-topic-explorer.netlify.app/) 
+url: https://github-topic-explorer.netlify.app/
+
 ## Assignment:
 
 Your task is to build a React web application that displays all the "[topics](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#topic)" related to the term "react", using the GitHub GraphQL API.
@@ -47,7 +50,7 @@ A general overview of the code structure:
 
 ### How to run app & test
 
-[See the app in action](github-topic-explorer.netlify.app/) 
+[See the app in action](https://github-topic-explorer.netlify.app/) 
 
 To test, you will need to:
 1. `git clone git@github.com:atomictangerine/github-topic-explorer.git` into your favorite working directory. You can also use the HHTPS link if that's how you prefer to github.  OR If you have a zip of the project, unzip it and then open it and move it to your favorite working directory.
