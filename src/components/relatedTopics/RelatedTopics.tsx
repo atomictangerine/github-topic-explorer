@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { colors, grid } from '../../styles';
+import { colors } from '../../styles';
+import queryRelatedTopics from '../../queries/relatedTopics';
 import TopicCard from './TopicCard';
 import {
   UpdateCurrentTopicFunctionType,
+  updateCurrentStargazerCountInterface,
 } from '../app/App';
 
 const NoResults = styled.div`
@@ -31,16 +33,23 @@ type RelatedTopicsArrayInterface = Array<RelatedTopicInterface>;
 interface RelatedTopicsInterface {
   currentTopic: string;
   updateCurrentTopic: UpdateCurrentTopicFunctionType;
+  updateCurrentStargazerCount: updateCurrentStargazerCountInterface;
 }
 
 const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
   currentTopic,
   updateCurrentTopic,
+  updateCurrentStargazerCount,
 }) => {
   const { data, refetch } = queryRelatedTopics(currentTopic);
 
   useEffect(() => {
+    updateCurrentStargazerCount(data?.topic?.stargazerCount);
+  }, [data]);
+
+  useEffect(() => {
     refetch();
+    updateCurrentStargazerCount(data?.stargazerCount);
   }, [currentTopic]);
 
   const relatedTopics: RelatedTopicsArrayInterface = data?.topic?.relatedTopics;
@@ -56,6 +65,7 @@ const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
             key={relatedTopic?.name}
             topic={relatedTopic}
             updateCurrentTopic={updateCurrentTopic}
+            updateCurrentStargazerCount={updateCurrentStargazerCount}
           />
         ))}
     </RelatedTopicsContainer>

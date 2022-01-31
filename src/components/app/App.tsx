@@ -16,19 +16,31 @@ const AppContainer = styled.div`
   background-color: ${colors.grey6};
 `;
 
+export type UpdateCurrentTopicFunctionType = (newTopic: string) => void;
+export type updateCurrentStargazerCountInterface = (newStargazerCount: number) => void;
+
 const App = () => {
   const [currentTopic, setCurrentTopic] = useState('react');
+  const [currentStargazerCount, setStargazerCount] = useState(0);
 
-  const updateTopic = (newTopic: string) => {
+  const updateCurrentTopic = (newTopic: string) => {
     setCurrentTopic(newTopic);
+  };
+
+  const updateCurrentStargazerCount = (newStargazerCount: number) => {
+    setStargazerCount(newStargazerCount);
   };
 
   return (
     <AppContainer>
       <Title />
-      <SearchBar updateTopic={updateTopic} />
-      <SubTitle currentTopic={currentTopic} />
-      <RelatedTopics currentTopic={currentTopic} updateTopic={updateTopic} />
+      <SearchBar updateCurrentTopic={updateCurrentTopic} />
+      <SubTitle currentTopic={currentTopic} currentStargazerCount={currentStargazerCount} />
+      <RelatedTopics
+        currentTopic={currentTopic}
+        updateCurrentStargazerCount={updateCurrentStargazerCount}
+        updateCurrentTopic={updateCurrentTopic}
+      />
     </AppContainer>
   );
 };

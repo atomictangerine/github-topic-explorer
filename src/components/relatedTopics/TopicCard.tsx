@@ -4,6 +4,7 @@ import { colors, grid } from '../../styles';
 import { RelatedTopicInterface } from './RelatedTopics';
 import {
   UpdateCurrentTopicFunctionType,
+  updateCurrentStargazerCountInterface,
 } from '../app/App';
 
 const CardContainer = styled.div`
@@ -37,16 +38,19 @@ const StargazerCount = styled.span`
 interface TopicCardInterface {
   topic: RelatedTopicInterface;
   updateCurrentTopic: UpdateCurrentTopicFunctionType;
+  updateCurrentStargazerCount: updateCurrentStargazerCountInterface;
 }
 
 const TopicCard: React.FC<TopicCardInterface> = (props) => {
   const {
     topic,
     updateCurrentTopic,
+    updateCurrentStargazerCount,
   } = props;
 
   const onClick = () => {
     updateCurrentTopic(topic?.name);
+    updateCurrentStargazerCount(topic?.stargazerCount);
   };
 
   return (
