@@ -54,7 +54,7 @@ const TopicCard: React.FC<TopicCardInterface> = (props) => {
   };
 
   return (
-    <CardContainer onClick={() => onClick()}>
+    <CardContainer onClick={() => onClick()} data-testid="card-js">
       <CardContent>
         <TopicName>{topic?.name}</TopicName>
         <StargazerCount>

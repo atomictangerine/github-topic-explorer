@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@apollo/react-testing": "^4.0.0",
     "@types/styled-components": "^5.1.21",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
@@ -56,5 +57,10 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1"
   },
-  "eslintIgnore": ["*.test.ts", "*.test.tsx", "*.png", "*.css"]
+  "eslintIgnore": [
+    "*.test.ts",
+    "*.test.tsx",
+    "*.png",
+    "*.css"
+  ]
 }

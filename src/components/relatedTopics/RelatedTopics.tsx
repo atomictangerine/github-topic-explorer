@@ -55,7 +55,7 @@ const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
   const relatedTopics: RelatedTopicsArrayInterface = data?.topic?.relatedTopics;
 
   return (
-    <RelatedTopicsContainer>
+    <RelatedTopicsContainer data-testid="related-topics-js">
       {relatedTopics && !relatedTopics.length && (
         <NoResults>No results found</NoResults>
       )}
@@ -66,6 +66,7 @@ const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
             topic={relatedTopic}
             updateCurrentTopic={updateCurrentTopic}
             updateCurrentStargazerCount={updateCurrentStargazerCount}
+            data-testid="topic-card-js"
           />
         ))}
     </RelatedTopicsContainer>

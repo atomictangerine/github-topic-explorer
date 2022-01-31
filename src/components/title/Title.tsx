@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, grid } from '../styles';
+import { colors, grid } from '../../styles';
 
 const TitleContainer = styled.div`
   text-align: center;
@@ -12,7 +12,7 @@ const Title = styled.h1`
 `;
 
 const TitleComponent = () => (
-  <TitleContainer>
+  <TitleContainer data-testid="title-js">
     <Title>Github Topic Explorer</Title>
   </TitleContainer>
 );

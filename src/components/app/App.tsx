@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Title from '../Title';
+import Title from '../title/Title';
 import RelatedTopics from '../relatedTopics/RelatedTopics';
 import { colors, grid } from '../../styles';
 import SearchBar from '../search/SearchBar';
-import SubTitle from '../SubTitle';
+import SubTitle from '../subtitle/SubTitle';
 
 const AppContainer = styled.div`
   max-width: 960px;
@@ -32,7 +32,7 @@ const App = () => {
   };
 
   return (
-    <AppContainer>
+    <AppContainer data-testid="app-js">
       <Title />
       <SearchBar updateCurrentTopic={updateCurrentTopic} />
       <SubTitle currentTopic={currentTopic} currentStargazerCount={currentStargazerCount} />

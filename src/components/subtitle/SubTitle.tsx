@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, grid } from '../styles';
+import { colors, grid } from '../../styles';
 
 const SubTitleText = styled.div`
   font-size: ${grid.l};
@@ -23,7 +23,7 @@ interface SubTitleInterface {
 }
 
 const SubTitle: React.FC<SubTitleInterface> = ({ currentTopic, currentStargazerCount }) => (
-  <SubTitleText>
+  <SubTitleText data-testid="subtitle-js">
     Topics related to
     <CurrentTopic>{currentTopic}</CurrentTopic>
 

@@ -65,11 +65,13 @@ const SearchBar: React.FC<{ updateCurrentTopic: UpdateCurrentTopicFunctionType }
         value={value}
         onKeyDown={(e: KeyboardEvent<HTMLElement>): void => onKeyDown(e)}
         onChange={(e: ChangeEvent<HTMLInputElement>): void => onChange(e)}
+        data-testid="search-text-input-js"
       />
       <SearchIcon
         onClick={() => {
           onClick();
         }}
+        data-testid="search-icon-js"
       />
     </SearchContainer>
   );
