@@ -40,7 +40,6 @@
       "unnamedComponents": "arrow-function"
     }],
     "operator-linebreak": [2, "after"],
-    "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }],
-    "react/require-default-props": "true"
+    "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }]
   }
 }
