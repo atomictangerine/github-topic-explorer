@@ -13,19 +13,28 @@ const CurrentTopic = styled.span`
   padding-left: ${grid.xs};
 `;
 
+const StargazerCount = styled.span`
+  padding-left: ${grid.xs};
+`;
+
 interface SubTitleInterface {
   currentTopic: string;
+  currentStargazerCount: number;
 }
 
-const SubTitle: React.FC<SubTitleInterface> = (props) => {
-  const { currentTopic } = props;
+const SubTitle: React.FC<SubTitleInterface> = ({ currentTopic, currentStargazerCount }) => (
+  <SubTitleText>
+    Topics related to
+    <CurrentTopic>{currentTopic}</CurrentTopic>
 
-  return (
-    <SubTitleText>
-      Topics related to
-      <CurrentTopic>{currentTopic}</CurrentTopic>
-    </SubTitleText>
-  );
-};
+    {currentStargazerCount > 0 && ( // hide stargazer count if <= 0
+      <StargazerCount>
+        <span>(</span>
+        {currentStargazerCount}
+        <span>⭐)</span>
+      </StargazerCount>
+    )}
+  </SubTitleText>
+);
 
 export default SubTitle;

@@ -56,5 +56,5 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1"
   },
-  "eslintIgnore": ["*.test.ts", "*.test.tsx"]
+  "eslintIgnore": ["*.test.ts", "*.test.tsx", "*.png", "*.css"]
 }

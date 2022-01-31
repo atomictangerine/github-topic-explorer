@@ -1,5 +1,9 @@
 # GitHub Topic Explorer
 
+## To-do:
+1. Turn my queries into actual `.graphql` query files and use them for better typing. Makes for a more stable react app.
+2. 
+
 ## Assignment:
 
 Your task is to build a React web application that displays all the "[topics](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#topic)" related to the term "react", using the GitHub GraphQL API.

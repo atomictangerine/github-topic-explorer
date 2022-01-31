@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, KeyboardEvent, ChangeEvent } from 'react';
 import styled from 'styled-components';
 import { colors, grid } from '../../styles';
 import searchIcon from './search_icon.png';
+import { UpdateCurrentTopicFunctionType } from '../app/App';
 
 const SearchContainer = styled.div`
   background-color: ${colors.grey1};
@@ -35,33 +36,35 @@ const SearchTextField = styled.input`
   padding-left: ${grid.l};
 `;
 
-const SearchBar: React.FC<{ updateTopic: Function }> = ({ updateTopic }) => {
+const SearchBar: React.FC<{ updateCurrentTopic: UpdateCurrentTopicFunctionType }> = ({
+  updateCurrentTopic,
+}) => {
   const [value, setValue] = useState('');
 
-  const onKeyDown = (e: any) => {
+  const onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
     if ((value && e.key === 'Enter') || e.keyCode === 13) {
-      updateTopic(value);
+      updateCurrentTopic(value);
     }
   };
 
-  const onChange = (e: any) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e?.target?.value.trim();
     setValue(val);
-    updateTopic(val);
+    updateCurrentTopic(val);
   };
 
   const onClick = () => {
-    updateTopic(value);
+    updateCurrentTopic(value);
   };
 
   return (
     <SearchContainer>
       <SearchTextField
-        type='text'
-        placeholder='Search topics'
+        type="text"
+        placeholder="Search topics"
         value={value}
-        onKeyDown={(e) => onKeyDown(e)}
-        onChange={(e) => onChange(e)}
+        onKeyDown={(e: KeyboardEvent<HTMLElement>): void => onKeyDown(e)}
+        onChange={(e: ChangeEvent<HTMLInputElement>): void => onChange(e)}
       />
       <SearchIcon
         onClick={() => {

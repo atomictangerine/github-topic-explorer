@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { colors, grid } from '../../styles';
-import { getRelatedTopics } from '../../queries/relatedTopics';
 import TopicCard from './TopicCard';
+import {
+  UpdateCurrentTopicFunctionType,
+} from '../app/App';
 
 const NoResults = styled.div`
   color: ${colors.grey1};
@@ -28,14 +30,14 @@ type RelatedTopicsArrayInterface = Array<RelatedTopicInterface>;
 
 interface RelatedTopicsInterface {
   currentTopic: string;
-  updateTopic: Function;
+  updateCurrentTopic: UpdateCurrentTopicFunctionType;
 }
 
 const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
   currentTopic,
-  updateTopic,
+  updateCurrentTopic,
 }) => {
-  const { data, refetch }: any = getRelatedTopics(currentTopic);
+  const { data, refetch } = queryRelatedTopics(currentTopic);
 
   useEffect(() => {
     refetch();
@@ -53,7 +55,7 @@ const RelatedTopics: React.FC<RelatedTopicsInterface> = ({
           <TopicCard
             key={relatedTopic?.name}
             topic={relatedTopic}
-            updateTopic={updateTopic}
+            updateCurrentTopic={updateCurrentTopic}
           />
         ))}
     </RelatedTopicsContainer>

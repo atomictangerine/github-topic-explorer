@@ -8,7 +8,7 @@ interface Colors {
   grey6: string;
 }
 
-export const colors: Colors = {
+const colors: Colors = {
   white: '#FFFFFF',
   grey1: '#EEEEEE',
   grey2: '#BBBBBB',
@@ -17,3 +17,5 @@ export const colors: Colors = {
   grey5: '#4D4D4D',
   grey6: '#262626',
 };
+
+export default colors;

@@ -8,7 +8,7 @@ interface Grid {
 }
 
 // following 4dp baseline grid
-export const grid: Grid = {
+const grid: Grid = {
   xs: '4px',
   s: '8px',
   m: '12px',
@@ -16,3 +16,5 @@ export const grid: Grid = {
   xl: '48px',
   xxl: '64px',
 };
+
+export default grid;
