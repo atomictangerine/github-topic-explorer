@@ -62,6 +62,7 @@ To test, you will need to:
 Feel free to elaborate on how you would improve any of the following topics 
 
 * Code Structuring:
+- Depending on how big the app gets, this could change. Add a mini design system? Queries become more extensive? Get lots of assets (visual, docs, etc)?
 
 * Refactoring:
 - I tried to be as strict with my types as I could, but I think there's a little room to tighten that up. Especially in the tests.
@@ -71,6 +72,7 @@ Feel free to elaborate on how you would improve any of the following topics
 - Having some e2e tests or some integration testing would make sure that nothing goes awry. Or point out if things are already awry.
 - I think it would be nice to go back and maybe tweak the visuals a bit. Like adding a shadow or some other visual way of telling which card you hovered on
 - It might be nice to be able to sort your results. I guess it doesn't really matter when you only get 10 things but maybe if we had more data.
+- I noticed that if you type something in the searchbar and then delete it you don't get the results empty state and the subtitle isn't handled too well. I would fix that.
 
 ## Available Scripts
 
